@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+:root {
+    --Darkcyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --VeryDarkBlue: hsl(212, 21%, 14%);
+    --DarkGrayishBlue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background: var(--Cream);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+}
+
+.info {
+    background-color: var(--White);
+    padding: 20px;
+}
+
+.info span:first-child {
+    color: var(--DarkGrayishBlue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.info h1 {
+    margin: 20px auto;
+    color: var(--VeryDarkBlue);
+    font-family: "Fraunces", serif;
+    font-size: 47px;
+}
+
+.info p {
+    color: var(--DarkGrayishBlue);
+    margin-bottom: 30px;
+}
+
+.info .price {
+    color: var(--Darkcyan);
+    font-size: 27px;
+    font-weight: bold;
+    display: block;
+    position: relative;
+    width: fit-content;
+}
+
+.info .price::before {
+    content: "$169.99";
+    font-size: 12px;
+    position: absolute;
+    top: -10px;
+    left: 100%;
+    font-weight: 200;
+    color: var(--DarkGrayishBlue);
+}
+
+.info .price::after {
+    content: "";
+    left: calc(100% - 3px);
+    top: -3px;
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background-color: var(--DarkGrayishBlue);
+}
+
+.info button {
+    padding: 10px 20px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--Darkcyan);
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.info button img {
+    margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 768px;
+    }
+
+    .container .img {
+        flex: 1;
+        background-image: url("./img/image-product-desktop.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .info {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 100%;
+        flex-direction: column;
+        margin-right:10px;
+        margin-left:10px;
+    }
+
+    .container .img {
+        width: 100%;
+        height:250px;
+        background-image: url("./img/image-product-mobile.jpg");
+        background-size: cover;
+        background-position: top;
+    }
+}
